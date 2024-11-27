@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 from tensorflow.keras.preprocessing.image import img_to_array
 
-model = tf.keras.models.load_model(r'C:\Users\ing-v\Downloads\cnn_model.h5')
+model = tf.keras.models.load_model(r'resources\cnn_model.h5')
 label_map ={0: 'Benign', 1: 'Malignant'}
 
 st.set_page_config(
@@ -20,7 +20,7 @@ def generate_progress_bar(value):
 st.title('Clasificación de imágenes de mamografías')
 # Texto introductorio
 st.write("Suba una imagen de una mamografía que desee clasificar")
-# Subir archivo CSV
+# Subir archivo 
 uploaded_image = st.file_uploader("Subir imagen", type=["jpg", "png"])
 
 if uploaded_image is not None:
