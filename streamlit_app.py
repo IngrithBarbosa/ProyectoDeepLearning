@@ -27,6 +27,7 @@ if uploaded_image is not None:
     image = Image.open(uploaded_image)
     st.image(image, caption="Imagen cargada", use_column_width=True)
 
+    image=image.resize((640, 640))
     img_array = img_to_array(image)
     img_array = np.expand_dims(img_array, axis=0)
     img_array = img_array / 255.0  # Normalización
@@ -41,7 +42,7 @@ if uploaded_image is not None:
             st.subheader('Clasificación')
             st.write(f"Clasificación: {predicted_label}")
 
-            st.success("✅ Done!")
+            #st.success("✅ Done!")
 
             #st.markdown(result_df.to_html(escape=False), unsafe_allow_html=True)
         except Exception as e:
