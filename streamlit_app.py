@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 from tensorflow.keras.preprocessing.image import img_to_array
 
-model = tf.keras.models.load_model(r'resources\cnn_model.h5')
+model = tf.keras.models.load_model('cnn_model.h5')
 label_map ={0: 'Benign', 1: 'Malignant'}
 
 st.set_page_config(
